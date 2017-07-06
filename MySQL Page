@@ -1,0 +1,31 @@
+Create Database MyInsuranceProject;
+
+Create table InsuranceUser(
+id int (20) not null auto_increment primary key,
+first_name  varchar(100) not null,
+last_name  varchar(100) not null,
+gender varchar(30) not null,
+age varchar(30) not null,
+phone varchar(100) not null,
+address varchar(100) not null,
+SSN varchar(20) not null,
+drivinglisence_no varchar(20) not null
+);
+Create table AddVehicle(
+id int (20) not null auto_increment primary key,
+make  varchar(100) not null,
+model varchar(30) not null,
+year varchar(100) not null,
+vinnumber varchar(100) not null,
+lisenceplatenumber varchar(100) not null
+);
+Create table User_Vehicle(
+id int (20) not null auto_increment primary key,
+InsuranceUser_id  int(30) not null,
+AddVehicle_id int(30) not null,
+foreign key(InsuranceUser_id) references InsuranceUser(id),
+foreign key(AddVehicle_id) references AddVehicle(id)
+);
+select * from InsuranceUser;
+select * from AddVehicle;
+select * from User_Vehicle;
